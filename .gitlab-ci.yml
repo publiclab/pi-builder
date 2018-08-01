@@ -3,6 +3,9 @@ image: docker
 services:
   - docker:dind
 
+before_script:
+  - apk add --no-cache make
+
 job:
   script:
     - make sd-image
