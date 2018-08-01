@@ -1,0 +1,8 @@
+image: docker
+
+services:
+  - docker:dind
+
+job:
+  script:
+    - make sd-image
