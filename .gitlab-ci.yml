@@ -3,6 +3,10 @@ image: gitlab/dind
 services:
   - gitlab/dind
 
+before_install:
+  - apt-get update
+  - apt-get install -y make
+
 variables:
   LIBGUESTFS_DEBUG: 1 
   LIBGUESTFS_TRACE: 1
