@@ -1,7 +1,7 @@
 image: paulwoelfel/debian-docker 
 
 services: 
-  docker: paulwoelfel/debian-docker 
+  - docker:paulwoelfel/debian-docker 
 
 before_script:
   - docker info
