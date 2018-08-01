@@ -1,11 +1,12 @@
-image: gitlab/dind
-
-services:
-  - docker:gitlab/dind
+#image: gitlab/dind
+#
+#services:
+#  - docker:gitlab/dind
 
 before_script:
-  - apt-get update
-  - apt-get install -y make
+  - docker info
+  #  - apt-get update
+  #  - apt-get install -y make
 
 variables:
   LIBGUESTFS_DEBUG: 1 
