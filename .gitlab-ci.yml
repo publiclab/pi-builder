@@ -1,5 +1,8 @@
 image: paulwoelfel/debian-docker 
 
+services: 
+  docker: paulwoelfel/debian-docker 
+
 before_script:
   - docker info
   #  - apt-get update
