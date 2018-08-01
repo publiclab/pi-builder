@@ -1,7 +1,7 @@
 image: gitlab/dind
 
 services:
-  - gitlab/dind:dind
+  - gitlab/dind
 
 before_script:
   - apk add --no-cache make
