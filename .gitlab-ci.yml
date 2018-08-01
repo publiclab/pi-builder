@@ -1,7 +1,7 @@
 image: gitlab/dind
 
 services:
-  - gitlab/dind
+  - docker:gitlab/dind
 
 before_script:
   - apt-get update
