@@ -3,9 +3,6 @@ image: gitlab/dind
 services:
   - gitlab/dind
 
-before_script:
-  - apk add --no-cache make
-
 variables:
   LIBGUESTFS_DEBUG: 1 
   LIBGUESTFS_TRACE: 1
