@@ -1,7 +1,4 @@
-image: dockercore/docker
-#
-#services:
-#  - docker:gitlab/dind
+image: paulwoelfel/debian-docker 
 
 before_script:
   - docker info
@@ -11,8 +8,8 @@ before_script:
 variables:
   LIBGUESTFS_DEBUG: 1 
   LIBGUESTFS_TRACE: 1
-  DOCKER_HOST: tcp://docker:2375/
-  DOCKER_DRIVER: overlay2
+  #  DOCKER_HOST: tcp://docker:2375/
+  #  DOCKER_DRIVER: overlay2
 
 job:
   script:
