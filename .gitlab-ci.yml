@@ -6,6 +6,10 @@ services:
 before_script:
   - apk add --no-cache make
 
+variables:
+  LIBGUESTFS_DEBUG: 1 
+  LIBGUESTFS_TRACE: 1
+
 job:
   script:
     - make sd-image
