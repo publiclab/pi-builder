@@ -5,7 +5,7 @@ services:
 
 before_script:
   - docker info
-  - apt-get update && apt-get install -y make linux-image-generic
+  - apt-get update && apt-get install -y --no-install-recommends make linux-image-generic
 
 variables:
   LIBGUESTFS_DEBUG: 1 
