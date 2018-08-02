@@ -93,7 +93,7 @@ echo "${RAW_IMAGE_CHECKSUM} ${BUILD_RESULT_PATH}/${RAW_IMAGE}.zip" | sha256sum -
 unzip -p "${BUILD_RESULT_PATH}/${RAW_IMAGE}" > "/${HYPRIOT_IMAGE_NAME}"
 
 # create the image and add root base filesystem
-guestfish -v -a "/${HYPRIOT_IMAGE_NAME}"<<_EOF_
+guestfish -a "/${HYPRIOT_IMAGE_NAME}"<<_EOF_
   run
   #import filesystem content
   mount /dev/sda2 /
