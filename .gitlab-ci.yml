@@ -7,3 +7,7 @@ before_script:
 job:
   script:
     - make sd-image
+  artifacts:
+    paths:
+    - hypriotos-rpi-dirty.img.zip
+    - hypriotos-rpi-dirty.img.zip.sha256
