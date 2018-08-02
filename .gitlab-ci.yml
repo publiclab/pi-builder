@@ -7,10 +7,6 @@ before_script:
   - docker info
   - apt-get update && apt-get install -y --no-install-recommends make linux-image-generic
 
-variables:
-  LIBGUESTFS_DEBUG: 1 
-  LIBGUESTFS_TRACE: 1
-
 job:
   script:
     - make sd-image
