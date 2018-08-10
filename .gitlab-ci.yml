@@ -24,9 +24,9 @@ pages:
   before_script:
     - npm install gitbook-cli -g # install gitbook
     - gitbook fetch latest # fetch latest stable version
-    - gitbook install # add any requested plugins in book.json
+    - gitbook install docs # add any requested plugins in book.json
   script:
-    - gitbook build . public # build to public path
+    - gitbook build docs public # build to public path
   artifacts:
     paths:
       - public
