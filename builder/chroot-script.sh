@@ -148,7 +148,7 @@ apt-get  -o Dpkg::Options::=--force-confdef \
   lsb-release \
   gettext \
   cloud-init \
-  raspberrypi-ui-mods \
+  pt-ui-mods \
   git
 
 
