@@ -120,7 +120,7 @@ apt-get update
 # apt-get upgrade -y
 
 # install packages
-apt-get  -o Dpkg::Options::=--force-confdef \
+DEBIAN_FRONTEND=noninteractive apt-get  -o Dpkg::Options::=--force-confdef \
   install -y \
   --no-install-recommends \
   firmware-atheros \
