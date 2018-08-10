@@ -147,7 +147,9 @@ apt-get  -o Dpkg::Options::=--force-confdef \
   pi-bluetooth \
   lsb-release \
   gettext \
-  cloud-init
+  cloud-init \
+  raspberrypi-ui-mods \
+  git
 
 
 # install special Docker enabled kernel
@@ -220,3 +222,6 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 echo "HYPRIOT_DEVICE=\"$HYPRIOT_DEVICE\"" >> /etc/os-release
 echo "HYPRIOT_IMAGE_VERSION=\"$HYPRIOT_IMAGE_VERSION\"" >> /etc/os-release
 cp /etc/os-release /boot/os-release
+
+# Integrate camera development work (see https://publiclab.org/notes/MaggPi/08-09-2018/raspberry-pi-manual-camera-control )
+git clone https://github.com/MargaretAN9/Peggy/ /home/publiclab/Peggy
