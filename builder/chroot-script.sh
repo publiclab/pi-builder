@@ -120,7 +120,7 @@ apt-get update
 # apt-get upgrade -y
 
 # Check free space
-df -h
+df -h /
 
 # install packages
 DEBIAN_FRONTEND=noninteractive apt-get  -o Dpkg::Options::=--force-confdef \
