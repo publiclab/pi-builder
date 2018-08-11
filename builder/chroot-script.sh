@@ -151,7 +151,6 @@ DEBIAN_FRONTEND=noninteractive apt-get  -o Dpkg::Options::=--force-confdef \
   pt-ui-mods \
   git
 
-
 # install special Docker enabled kernel
 if [ -z "${KERNEL_URL}" ]; then
   apt-get install -y \
