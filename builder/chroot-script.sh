@@ -119,6 +119,9 @@ echo 'deb http://archive.raspberrypi.org/debian/ stretch main' | tee /etc/apt/so
 apt-get update
 # apt-get upgrade -y
 
+# Check free space
+df -h
+
 # install packages
 DEBIAN_FRONTEND=noninteractive apt-get  -o Dpkg::Options::=--force-confdef \
   install -y \
