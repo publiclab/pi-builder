@@ -28,16 +28,16 @@ describe "Root filesystem" do
     expect(stdout).to contain('^HYPRIOT_IMAGE_VERSION=')
   end
 
-  it "is for architecure 'HYPRIOT_OS=\"HypriotOS/armhf\"'" do
-    expect(stdout).to contain('^HYPRIOT_OS="HypriotOS/armhf"$')
+  it "is for architecure 'HYPRIOT_OS=\"HypriotOS/i386\"'" do
+    expect(stdout).to contain('^HYPRIOT_OS="HypriotOS/i386"$')
   end
 
-  it "is for device 'HYPRIOT_DEVICE=\"Raspberry Pi\"'" do
-    expect(stdout).to contain('^HYPRIOT_DEVICE="Raspberry Pi"$')
+  it "is for device 'HYPRIOT_DEVICE=\"Laptop\"'" do
+    expect(stdout).to contain('^HYPRIOT_DEVICE="Laptop"$')
   end
 
-  it "uses os-rootfs version 'HYPRIOT_OS_VERSION=\"v2.0.1\"'" do
-    expect(stdout).to contain('^HYPRIOT_OS_VERSION="v2.0.1"$')
+  it "uses os-rootfs version 'HYPRIOT_OS_VERSION=\"dirty\"'" do
+    expect(stdout).to contain('^HYPRIOT_OS_VERSION="dirty"$')
   end
 
   if ENV.fetch('CIRCLE_TAG','') != ''

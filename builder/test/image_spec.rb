@@ -26,8 +26,8 @@ describe "SD card image" do
   context "Binary dpkg" do
     let(:stdout) { run_mounted("file-architecture /usr/bin/dpkg").stdout }
 
-    it "is compiled for ARM architecture" do
-      expect(stdout).to contain('arm')
+    it "is compiled for i386 architecture" do
+      expect(stdout).to contain('i386')
     end
   end
 
