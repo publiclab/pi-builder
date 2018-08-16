@@ -18,7 +18,7 @@ BUILD_RESULT_PATH="/workspace"
 # place to build our sd-image
 BUILD_PATH="/build"
 
-ROOTFS_TAR="rootfs-armhf-raspbian-${HYPRIOT_OS_VERSION}.tar.gz"
+ROOTFS_TAR="rootfs-i386-debian-${HYPRIOT_OS_VERSION}.tar.gz"
 ROOTFS_TAR_PATH="${BUILD_RESULT_PATH}/${ROOTFS_TAR}"
 
 # Show CIRCLE_TAG in Circle builds
@@ -35,7 +35,7 @@ mkdir ${BUILD_PATH}
 
 # download our base root file system
 if [ ! -f "${ROOTFS_TAR_PATH}" ]; then
-  wget -q -O "${ROOTFS_TAR_PATH}" "https://github.com/hypriot/os-rootfs/releases/download/${HYPRIOT_OS_VERSION}/${ROOTFS_TAR}"
+  wget -q -O "${ROOTFS_TAR_PATH}" "https://jenkins.laboratoriopublico.org/job/os-rootfs%20base%20filesystem/ws/${ROOTFS_TAR}"
 fi
 
 # verify checksum of our root filesystem
@@ -47,7 +47,7 @@ tar xf "${ROOTFS_TAR_PATH}" -C "${BUILD_PATH}"
 # register qemu-arm with binfmt
 # to ensure that binaries we use in the chroot
 # are executed via qemu-arm
-update-binfmts --enable qemu-arm
+# update-binfmts --enable qemu-arm
 
 # set up mount points for the pseudo filesystems
 mkdir -p ${BUILD_PATH}/{proc,sys,dev/pts}
