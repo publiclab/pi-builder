@@ -98,15 +98,6 @@ echo "nameserver 8.8.8.8" > "${DEST}"
 apt-get update
 apt-get upgrade -y
 
-# install WiFi firmware packages (same as in Raspbian)
-apt-get install -y \
-  --no-install-recommends \
-  firmware-atheros \
-  firmware-brcm80211 \
-  firmware-libertas \
-  firmware-misc-nonfree \
-  firmware-realtek
-
 # create /etc/fstab
 echo "
 proc /proc proc defaults 0 0
