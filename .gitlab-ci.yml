@@ -1,0 +1,15 @@
+image: gitlab/dind
+
+variables:
+  VERSION: ${CI_COMMIT_REF_NAME}
+
+before_script:
+  - apt-get update && apt-get install -y --no-install-recommends make linux-image-generic
+
+job:
+  script:
+    - make sd-image
+  artifacts:
+    paths:
+    - hypriotos-rpi-${VERSION}.img.zip
+    - hypriotos-rpi-${VERSION}.img.zip.sha256
