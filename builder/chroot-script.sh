@@ -147,6 +147,7 @@ apt-get  -o Dpkg::Options::=--force-confdef \
   pi-bluetooth \
   lsb-release \
   gettext \
+  unzip \
   cloud-init
 
 
