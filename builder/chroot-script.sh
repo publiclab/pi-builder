@@ -209,6 +209,14 @@ echo "Installing rpi-serial-console script"
 wget -q https://raw.githubusercontent.com/lurch/rpi-serial-console/master/rpi-serial-console -O usr/local/bin/rpi-serial-console
 chmod +x usr/local/bin/rpi-serial-console
 
+echo "Installing RPi Cam Web Interface"
+wget -q https://github.com/silvanmelchior/RPi_Cam_Web_Interface/archive/master.zip -O /tmp/rpicam.zip
+cd /tmp/
+unzip rpicam.zip
+cd RPi_Cam_Web_Interface-master
+cp /etc/rpicam_config.txt config.txt
+./install.sh --q
+
 # fix eth0 interface name
 ln -s /dev/null /etc/systemd/network/99-default.link
 
