@@ -148,6 +148,7 @@ apt-get  -o Dpkg::Options::=--force-confdef \
   lsb-release \
   gettext \
   unzip \
+  motion \
   cloud-init
 
 
@@ -216,7 +217,7 @@ cd /tmp/
 unzip rpicam.zip
 cd RPi_Cam_Web_Interface-master
 cp /etc/rpicam_config.txt config.txt
-./install.sh --q
+bash ./install.sh q
 
 # fix eth0 interface name
 ln -s /dev/null /etc/systemd/network/99-default.link
