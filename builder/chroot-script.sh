@@ -149,6 +149,7 @@ apt-get  -o Dpkg::Options::=--force-confdef \
   gettext \
   unzip \
   motion \
+  gpac \
   cloud-init
 
 
