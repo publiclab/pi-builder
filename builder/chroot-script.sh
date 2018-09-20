@@ -205,6 +205,11 @@ lighttpd-enable-mod fastcgi-php
 systemctl disable dhcpcd
 systemctl disable hciuart
 
+echo "Installing ttyd web terminal"
+wget -q https://github.com/tsl0922/ttyd/releases/download/1.4.2/ttyd_linux.armhf -O usr/local/bin/ttyd
+chmod +x usr/local/bin/ttyd
+systemctl enable ttyd
+
 echo "Installing rpi-serial-console script"
 wget -q https://raw.githubusercontent.com/lurch/rpi-serial-console/master/rpi-serial-console -O usr/local/bin/rpi-serial-console
 chmod +x usr/local/bin/rpi-serial-console
