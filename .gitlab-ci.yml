@@ -27,7 +27,7 @@ pages:
     - npm install gitbook-cli -g # install gitbook
     - gitbook fetch latest # fetch latest stable version
     - gitbook install docs # add any requested plugins in book.json
-    - sed 's/{{ CI_JOB }}/${CI_JOB}/g' docs/workflow.md
+    - sed \'s/{{ CI_JOB }}/${CI_JOB}/g\' docs/workflow.md
   script:
     - gitbook build docs builder/files/var/www/docs # build to public path
   artifacts:
