@@ -18,8 +18,6 @@ You may follow the link on your PR to view the build log and find the links to d
 
 These images are referred to as build artifacts and are available for download directly from the [**build jobs page at Gitlab**](https://gitlab.com/publiclab/image-builder-rpi/-/jobs).
 
-The build matching the documentation you are currently viewing is https://gitlab.com/publiclab/image-builder-rpi/-/jobs/{{ CI_JOB }}/artifacts/browse.
-
 ## Flash your image
 
 Using your preferred method (or the [Hypriot flash tool](https://github.com/hypriot/flash), which offers some flash-time customization hooks).
