@@ -33,5 +33,5 @@ pages:
   artifacts:
     paths:
       - builder/files/var/www/docs
-  only:
-    - master
+#  only:
+#    - master
