@@ -29,8 +29,10 @@ pages:
     - gitbook install docs # add any requested plugins in book.json
   script:
     - gitbook build docs builder/files/var/www/docs # build to public path
+  after_script:
+    - cp -ar builder/files/var/www/docs public
   artifacts:
     paths:
-      - builder/files/var/www/docs
+      - public
 #  only:
 #    - master
