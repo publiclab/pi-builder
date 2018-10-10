@@ -1,15 +1,36 @@
 image: gitlab/dind
 
+stages:
+  - docs
+  - publish
+
 variables:
   VERSION: ${CI_COMMIT_REF_NAME}
+  CI_JOB: ${CI_JOB_ID}
 
 before_script:
   - apt-get update && apt-get install -y --no-install-recommends make linux-image-generic
 
-job:
+sd-image:
+  stage: publish
   script:
     - make sd-image
   artifacts:
     paths:
     - hypriotos-rpi-${VERSION}.img.zip
     - hypriotos-rpi-${VERSION}.img.zip.sha256
+
+pages:
+  stage: docs
+  image: node:8.9
+  before_script:
+    - npm install gitbook-cli -g # install gitbook
+    - gitbook fetch latest # fetch latest stable version
+    - gitbook install docs # add any requested plugins in book.json
+  script:
+    - gitbook build docs builder/files/var/www/docs # build to public path
+  artifacts:
+    paths:
+      - builder/files/var/www/docs
+#  only:
+#    - master

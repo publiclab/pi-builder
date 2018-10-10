@@ -20,7 +20,7 @@ These images are referred to as build artifacts and are available for download d
 
 ## Flash your image
 
-Using your preferred method (or the [Hypriot flash tool](https://github.com/hypriot/flash) which offers some flash-time customization hooks.
+Using your preferred method (or the [Hypriot flash tool](https://github.com/hypriot/flash), which offers some flash-time customization hooks.
 
 ## Share your results!
 
