@@ -59,7 +59,7 @@ mount -t sysfs none ${BUILD_PATH}/sys
 
 # modify/add image files directly
 cp -R /builder/files/* ${BUILD_PATH}/
-cp -R /scripts/* ${BUILD_PATH}/usr/local/bin/
+cp -R /builder/scripts/* ${BUILD_PATH}/usr/local/bin/
 
 # make our build directory the current root
 # and install the Rasberry Pi firmware, kernel packages,
