@@ -22,7 +22,7 @@ sd-image:
 
 pages:
   stage: docs
-  image: node:8.9
+  image: node:8
   before_script:
     - npm install gitbook-cli -g # install gitbook
     - gitbook fetch latest # fetch latest stable version
