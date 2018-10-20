@@ -22,7 +22,7 @@ sd-image:
 
 pages:
   stage: docs
-  image: node:8
+  image: node:10
   before_script:
     - npm -g install npm@next
     - npm install gitbook-cli -g # install gitbook
