@@ -24,6 +24,7 @@ pages:
   stage: docs
   image: node:8
   before_script:
+    - npm -g install npm@next
     - npm install gitbook-cli -g # install gitbook
     - gitbook fetch latest # fetch latest stable version
     - gitbook install docs # add any requested plugins in book.json
