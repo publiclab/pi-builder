@@ -22,11 +22,11 @@ sd-image:
 
 pages:
   stage: docs
-  image: node:10
+  image: node:6
   before_script:
     - npm install gitbook-cli -g # install gitbook
     - gitbook fetch latest # fetch latest stable version
-#    - gitbook install docs # add any requested plugins in book.json
+    - gitbook install docs # add any requested plugins in book.json
   script:
     - gitbook build docs builder/files/var/www/docs # build to public path
   after_script:
