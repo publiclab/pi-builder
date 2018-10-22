@@ -205,6 +205,13 @@ lighttpd-enable-mod fastcgi-php
 systemctl disable dhcpcd
 systemctl disable hciuart
 
+echo "Installing infragram"
+
+git clone https://github.com/publiclab/infragram.git
+cd infragram
+npm install
+npm start
+
 echo "Installing rpi-serial-console script"
 wget -q https://raw.githubusercontent.com/lurch/rpi-serial-console/master/rpi-serial-console -O usr/local/bin/rpi-serial-console
 chmod +x usr/local/bin/rpi-serial-console
