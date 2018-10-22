@@ -211,6 +211,21 @@ lighttpd-enable-mod fastcgi-php
 systemctl disable dhcpcd
 systemctl disable hciuart
 
+echo "Installing infragram"
+
+# install npm/node:
+curl -o node-v9.7.1-linux-armv6l.tar.gz https://nodejs.org/dist/v9.7.1/node-v9.7.1-linux-armv6l.tar.gz
+tar -xzf node-v9.7.1-linux-armv6l.tar.gz
+sudo cp -r node-v9.7.1-linux-armv6l/* /usr/local/
+sudo apt-get install git
+
+# install infragram in the web public folder:
+cd /var/www/
+git clone https://github.com/publiclab/infragram.git
+cd infragram
+npm install
+cd /
+
 echo "Installing rpi-serial-console script"
 wget -q https://raw.githubusercontent.com/lurch/rpi-serial-console/master/rpi-serial-console -O usr/local/bin/rpi-serial-console
 chmod +x usr/local/bin/rpi-serial-console
