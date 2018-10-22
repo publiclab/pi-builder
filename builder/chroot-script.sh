@@ -207,10 +207,12 @@ systemctl disable hciuart
 
 echo "Installing infragram"
 
+cd /var/www/
 git clone https://github.com/publiclab/infragram.git
 cd infragram
 npm install
-npm start
+npm i -g http-server ; http-server -p 8000
+cd
 
 echo "Installing rpi-serial-console script"
 wget -q https://raw.githubusercontent.com/lurch/rpi-serial-console/master/rpi-serial-console -O usr/local/bin/rpi-serial-console
