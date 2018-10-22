@@ -84,7 +84,7 @@ ls -alh /image_with_kernel_*.tar.gz
 
 # download the ready-made raw image for the RPi
 if [ ! -f "${BUILD_RESULT_PATH}/${RAW_IMAGE}.zip" ]; then
-  wget -q -O "${BUILD_RESULT_PATH}/${RAW_IMAGE}.zip" "https://github.com/hypriot/image-builder-raw/releases/download/${RAW_IMAGE_VERSION}/${RAW_IMAGE}.zip"
+  wget -q -O "${BUILD_RESULT_PATH}/${RAW_IMAGE}.zip" "https://jenkins.laboratoriopublico.org/job/image-builder-raw/ws/${RAW_IMAGE}.zip"
 fi
 
 # verify checksum of the ready-made raw image
