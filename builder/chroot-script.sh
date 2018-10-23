@@ -207,6 +207,7 @@ systemctl disable hciuart
 
 echo "Installing infragram"
 
+sudo apt-get install nodejs npm node-semver
 cd /var/www/
 git clone https://github.com/publiclab/infragram.git
 cd infragram
