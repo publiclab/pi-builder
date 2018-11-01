@@ -219,11 +219,20 @@ tar -xzf node-v9.7.1-linux-armv6l.tar.gz
 sudo cp -r node-v9.7.1-linux-armv6l/* /usr/local/
 sudo apt-get install git
 
-# install infragram in the web public folder:
 cd /var/www/
+
+# install infragram in the web public folder:
 git clone https://github.com/publiclab/infragram.git
 cd infragram
 npm install
+cd /
+
+echo "Installing image-sequencer"
+# install image-sequencer in the web public folder:
+git clone https://github.com/publiclab/image-sequencer.git
+cd image-sequencer
+npm install
+
 cd /
 
 echo "Installing rpi-serial-console script"
