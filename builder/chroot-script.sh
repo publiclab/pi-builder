@@ -227,7 +227,7 @@ mkdir /home/wittypi
 git clone https://github.com/uugear/Witty-Pi-2.git /home/wittypi
 chmod +1 /home/wittypi/installWittyPi.sh
 ./home/wittypi/installWittyPi.sh
-wget https://gitlab.com/imvec/anoiacam/blob/8dc8b9c798d2d6c79ec4267b90b8175fd84c7682/schedule.wpi /home/wittypi/wittyPi
+wget https://github.com/imvectech/miscelaneous/blob/master/schedule.wpi /home/wittypi/wittyPi
 rm -rf /home/wittypi/wittyPi/daemon.sh
-wget https://gitlab.com/imvec/anoiacam/blob/11d387a98e0283f91e9ae7118a6456a4360caa7c/daemon.sh /home/wittypi/wittyPi
+wget https://github.com/imvectech/miscelaneous/blob/master/daemon.sh /home/wittypi/wittyPi
 
