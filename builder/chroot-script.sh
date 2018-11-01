@@ -220,3 +220,12 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 echo "HYPRIOT_DEVICE=\"$HYPRIOT_DEVICE\"" >> /etc/os-release
 echo "HYPRIOT_IMAGE_VERSION=\"$HYPRIOT_IMAGE_VERSION\"" >> /etc/os-release
 cp /etc/os-release /boot/os-release
+
+ echo "Installing Witty pi mini packages"
+mkdir /home/wittypi
+git clone https://github.com/uugear/Witty-Pi-2.git /home/wittypi
+chmod +1 /home/wittypi/installWittyPi.sh
+./home/wittypi/installWittyPi.sh
+wget https://github.com/imvectech/miscelaneous/blob/master/schedule.wpi /home/wittypi/wittyPi
+rm -rf /home/wittypi/wittyPi/daemon.sh
+wget https://github.com/imvectech/miscelaneous/blob/master/daemon.sh /home/wittypi/wittyPi
