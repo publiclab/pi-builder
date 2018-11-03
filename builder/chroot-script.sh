@@ -179,6 +179,11 @@ disable_camera_led=1
 gpu_mem=128
 " >> boot/config.txt
 
+# enable i2C
+echo "
+dtparam=i2c1=on
+" >> boot/config.txt
+
 # /etc/modules
 echo "snd_bcm2835
 " >> /etc/modules
