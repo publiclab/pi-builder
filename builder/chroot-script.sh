@@ -228,13 +228,6 @@ cp /etc/os-release /boot/os-release
 
 # install Witty pi energy manager software
 echo "Installing Witty Pi 2 software"
-yes | apt-get update
-mkdir /home/publiclab/wittypi
-yes | apt-get install git
-yes | git clone https://github.com/uugear/Witty-Pi-2.git /home/publiclab/wittypi
-chmod +1 /home/publiclab/wittypi/installWittyPi.sh
-cd /home/publiclab/wittypi
-yes | ./installWittyPi.sh
-wget https://github.com/imvectech/miscelaneous/blob/master/schedule.wpi /home/publiclab/wittypi/wittyPi
-rm -rf /home/wittypi/wittyPi/daemon.sh
-wget https://github.com/imvectech/miscelaneous/blob/master/daemon.sh /home/publiclab/wittypi/wittyPi
+wget http://www.uugear.com/repo/WittyPi2/installWittyPi.sh
+chmod +1 installWittyPi.sh
+yes | sudo sh installWittyPi.sh
