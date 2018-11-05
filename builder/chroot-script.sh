@@ -222,7 +222,6 @@ sudo apt-get install git
 cd /var/www/
 
 # install infragram in the web public folder:
-echo "Installing infragram"
 git clone https://github.com/publiclab/infragram.git
 cd infragram
 npm install
