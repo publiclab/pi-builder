@@ -225,7 +225,7 @@ cd /var/www/
 git clone https://github.com/publiclab/infragram.git
 cd infragram
 npm install
-cd /
+cd /var/www/
 
 echo "Installing image-sequencer"
 # install image-sequencer in the web public folder:
