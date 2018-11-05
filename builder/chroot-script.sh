@@ -227,7 +227,11 @@ echo "HYPRIOT_IMAGE_VERSION=\"$HYPRIOT_IMAGE_VERSION\"" >> /etc/os-release
 cp /etc/os-release /boot/os-release
 
 # install Witty pi energy manager software
+echo "Installing i2c-tools"
+apt-get install i2c-tools
+mkdir /home/imvec
+cd /home/imvec
 echo "Installing Witty Pi 2 software"
 wget http://www.uugear.com/repo/WittyPi2/installWittyPi.sh
-chmod +1 installWittyPi.sh
-yes | sudo sh installWittyPi.sh
+sh installWittyPi.sh
+apt-get update
