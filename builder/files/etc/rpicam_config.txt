@@ -1,8 +1,0 @@
-rpicamdir="cam"
-webserver=""
-webport="80"
-user=""
-webpasswd=""
-autostart="yes"
-jpglink="no"
-phpversion="7"
