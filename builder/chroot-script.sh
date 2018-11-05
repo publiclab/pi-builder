@@ -219,10 +219,11 @@ sudo apt-get install git
 cd /var/www/
 
 # install infragram in the web public folder:
+echo "Installing infragram"
 git clone https://github.com/publiclab/infragram.git
 cd infragram
 npm install
-cd /
+cd /var/www/
 
 echo "Installing image-sequencer"
 # install image-sequencer in the web public folder:
