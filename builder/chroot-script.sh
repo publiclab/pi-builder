@@ -147,7 +147,10 @@ apt-get  -o Dpkg::Options::=--force-confdef \
   pi-bluetooth \
   lsb-release \
   gettext \
-  cloud-init
+  cloud-init \
+  raspberrypi-ui-mods \
+  tightvncserver \
+  xvfb
 
 
 # install special Docker enabled kernel
