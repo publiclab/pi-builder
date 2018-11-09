@@ -234,4 +234,4 @@ cd /home/imvec
 echo "Installing Witty Pi 2 software"
 wget http://www.uugear.com/repo/WittyPi2/installWittyPi.sh
 sh installWittyPi.sh
-apt-get update
+# apt-get update
