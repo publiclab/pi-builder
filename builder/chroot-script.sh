@@ -152,6 +152,7 @@ DEBIAN_FRONTEND=noninteractive apt-get  -o Dpkg::Options::=--force-confdef \
   gettext \
   cloud-init \
   pt-ui-mods \
+  xserver-xorg \
   git
 
 # install special Docker enabled kernel
