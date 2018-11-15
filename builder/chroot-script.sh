@@ -218,7 +218,13 @@ curl -o node-v9.7.1-linux-armv6l.tar.gz https://nodejs.org/dist/v9.7.1/node-v9.7
 tar -xzf node-v9.7.1-linux-armv6l.tar.gz
 sudo cp -r node-v9.7.1-linux-armv6l/* /usr/local/
 sudo apt-get install git
+cd /var/www/
 
+# install spectral-workbench.js in the web public folder:
+echo "Installing spectral-workbench.js"
+git clone https://github.com/publiclab/spectral-workbench.js.git
+cd spectral-workbench
+npm install
 cd /var/www/
 
 # install infragram in the web public folder:
