@@ -223,7 +223,7 @@ cd /var/www/
 # install spectral-workbench.js in the web public folder:
 echo "Installing spectral-workbench.js"
 git clone https://github.com/publiclab/spectral-workbench.js.git
-cd spectral-workbench
+cd spectral-workbench.js
 npm install
 cd /var/www/
 
