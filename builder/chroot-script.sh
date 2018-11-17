@@ -180,6 +180,11 @@ disable_camera_led=1
 gpu_mem=128
 " >> boot/config.txt
 
+# enable i2C
+echo "
+dtparam=i2c1=on
+" >> boot/config.txt
+
 # /etc/modules
 echo "snd_bcm2835
 " >> /etc/modules
@@ -213,6 +218,9 @@ chmod +x usr/local/bin/rpi-serial-console
 # fix eth0 interface name
 ln -s /dev/null /etc/systemd/network/99-default.link
 
+# install I2C tools
+apt-get install i2c-tools
+
 # cleanup APT cache and lists
 apt-get clean
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -222,12 +230,9 @@ echo "HYPRIOT_DEVICE=\"$HYPRIOT_DEVICE\"" >> /etc/os-release
 echo "HYPRIOT_IMAGE_VERSION=\"$HYPRIOT_IMAGE_VERSION\"" >> /etc/os-release
 cp /etc/os-release /boot/os-release
 
-# install Witty Pi energy manager
-echo "Installing Witty pi mini packages"
-mkdir /home/wittypi
-git clone https://github.com/uugear/Witty-Pi-2.git /home/wittypi
-chmod +1 /home/wittypi/installWittyPi.sh
-./home/wittypi/installWittyPi.sh
-wget https://gitlab.com/imvec/anoiacam/blob/8dc8b9c798d2d6c79ec4267b90b8175fd84c7682/schedule.wpi /home/wittypi/wittyPi
-rm -rf /home/wittypi/wittyPi/daemon.sh
-wget https://gitlab.com/imvec/anoiacam/blob/11d387a98e0283f91e9ae7118a6456a4360caa7c/daemon.sh /home/wittypi/wittyPi
+# install Witty pi energy manager software
+cd /home
+wget http://www.uugear.com/repo/WittyPi2/installWittyPi.sh
+yes | sh installWittyPi.sh
+rm -rf /home/installWittyPi.sh
+# apt-get update
