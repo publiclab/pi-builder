@@ -147,7 +147,8 @@ apt-get  -o Dpkg::Options::=--force-confdef \
   pi-bluetooth \
   lsb-release \
   gettext \
-  cloud-init
+  cloud-init \
+  git
 
 
 # install special Docker enabled kernel
@@ -177,6 +178,11 @@ echo "# camera settings, see http://elinux.org/RPiconfig#Camera
 start_x=1
 disable_camera_led=1
 gpu_mem=128
+" >> boot/config.txt
+
+# enable i2C
+echo "
+dtparam=i2c1=on
 " >> boot/config.txt
 
 # /etc/modules
@@ -212,6 +218,9 @@ chmod +x usr/local/bin/rpi-serial-console
 # fix eth0 interface name
 ln -s /dev/null /etc/systemd/network/99-default.link
 
+# install I2C tools
+apt-get install i2c-tools
+
 # cleanup APT cache and lists
 apt-get clean
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -220,3 +229,10 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 echo "HYPRIOT_DEVICE=\"$HYPRIOT_DEVICE\"" >> /etc/os-release
 echo "HYPRIOT_IMAGE_VERSION=\"$HYPRIOT_IMAGE_VERSION\"" >> /etc/os-release
 cp /etc/os-release /boot/os-release
+
+# install Witty pi energy manager software
+cd /home
+wget http://www.uugear.com/repo/WittyPi2/installWittyPi.sh
+yes | sh installWittyPi.sh
+rm -rf /home/installWittyPi.sh
+# apt-get update
