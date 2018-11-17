@@ -217,6 +217,9 @@ chmod +x usr/local/bin/rpi-serial-console
 # fix eth0 interface name
 ln -s /dev/null /etc/systemd/network/99-default.link
 
+# install I2C tools
+apt-get install i2c-tools
+
 # cleanup APT cache and lists
 apt-get clean
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -227,11 +230,8 @@ echo "HYPRIOT_IMAGE_VERSION=\"$HYPRIOT_IMAGE_VERSION\"" >> /etc/os-release
 cp /etc/os-release /boot/os-release
 
 # install Witty pi energy manager software
-echo "Installing i2c-tools"
-apt-get install i2c-tools
-mkdir /home/imvec
-cd /home/imvec
-echo "Installing Witty Pi 2 software"
+cd /home
 wget http://www.uugear.com/repo/WittyPi2/installWittyPi.sh
-sh installWittyPi.sh
+yes | sh installWittyPi.sh
+rm -rf /home/installWittyPi.sh
 # apt-get update
