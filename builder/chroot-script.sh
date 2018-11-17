@@ -147,7 +147,8 @@ apt-get  -o Dpkg::Options::=--force-confdef \
   pi-bluetooth \
   lsb-release \
   gettext \
-  cloud-init
+  cloud-init \
+  git
 
 
 # install special Docker enabled kernel
