@@ -230,7 +230,6 @@ echo "Installing image-sequencer"
 git clone https://github.com/publiclab/image-sequencer.git
 cd image-sequencer
 npm install
-
 cd /
 
 echo "Installing rpi-serial-console script"
