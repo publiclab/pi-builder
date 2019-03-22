@@ -9,6 +9,12 @@ The Public Lab Pi Camera Kit includes an operating system which is built upon th
 
 The build scripts have been forked from the Hypriot project.
 
+## Tested on
+
+* Raspberry Pi Zero W
+* Raspberry Pi 3 Model B
+* add more in this issue: https://github.com/publiclab/pi-builder/issues/63
+
 ## Build instructions
 
 **Easy pull request build process**
@@ -39,7 +45,7 @@ cd flash
 ./flash ~/location_of/hypriotos-rpi-dirty.img.zip
 ```
 
-## Usage instructions (tested on Pi W Zero)
+## Usage instructions
 
 Place the flashed microSD card into your Pi device, power it up and give it a minute or two to start the embedded access point `00-PiCamera`, with password `publiclab`.
 
