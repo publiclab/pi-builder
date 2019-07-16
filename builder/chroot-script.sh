@@ -219,6 +219,8 @@ sudo apt-get install git
 cd /var/www/
 
 # install infragram in the web public folder:
+# prerequisites:
+sudo apt-get install -y build-essential libxi-dev libglu1-mesa-dev libglew-dev pkg-config
 echo "Installing infragram"
 git clone https://github.com/publiclab/infragram.git
 cd infragram
