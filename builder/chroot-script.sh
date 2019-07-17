@@ -220,8 +220,8 @@ cd /var/www/
 
 # install infragram in the web public folder:
 # prerequisites:
-sudo apt-get install -y build-essential libxi-dev libglu1-mesa-dev libglew-dev pkg-config
-echo "Installing infragram"
+sudo apt-get install -y build-essential libxi-dev libglu1-mesa-dev libglew-dev pkg-config python2.7 python2.7-dev
+cho "Installing infragram"
 git clone https://github.com/publiclab/infragram.git
 cd infragram
 npm install
