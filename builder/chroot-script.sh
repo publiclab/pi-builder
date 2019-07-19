@@ -211,9 +211,9 @@ lighttpd-enable-mod fastcgi-php
 systemctl disable dhcpcd
 systemctl disable hciuart
 
- echo "Installing infragram"
+echo "Installing infragram"
 
- # install npm/node:
+# install npm/node:
 curl -o node-v9.7.1-linux-armv6l.tar.gz https://nodejs.org/dist/v9.7.1/node-v9.7.1-linux-armv6l.tar.gz
 tar -xzf node-v9.7.1-linux-armv6l.tar.gz
 sudo cp -r node-v9.7.1-linux-armv6l/* /usr/local/
