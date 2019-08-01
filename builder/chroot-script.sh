@@ -144,6 +144,12 @@ apt-get  -o Dpkg::Options::=--force-confdef \
   pi-bluetooth \
   lsb-release \
   gettext \
+  unzip \
+  zip \
+  libav-tools \
+  gstreamer1.0-tools \
+  motion \
+  gpac \
   cloud-init
 
 
@@ -202,9 +208,49 @@ lighttpd-enable-mod fastcgi-php
 systemctl disable dhcpcd
 systemctl disable hciuart
 
+echo "Installing infragram"
+
+# install npm/node:
+curl -o node-v9.7.1-linux-armv6l.tar.gz https://nodejs.org/dist/v9.7.1/node-v9.7.1-linux-armv6l.tar.gz
+tar -xzf node-v9.7.1-linux-armv6l.tar.gz
+sudo cp -r node-v9.7.1-linux-armv6l/* /usr/local/
+sudo apt-get install git
+
+cd /var/www/
+
+# install infragram in the web public folder:
+# prerequisites:
+sudo apt-get install -y build-essential libxi-dev libgl1-mesa-dev libglew-dev pkg-config python python-dev
+git clone https://github.com/publiclab/infragram.git
+cd infragram
+npm install
+cd /var/www/
+
+echo "Installing image-sequencer"
+# install image-sequencer in the web public folder:
+git clone https://github.com/publiclab/image-sequencer.git
+cd image-sequencer
+npm install
+cd /
+
+echo "Installing spectral-workbench.js"
+# install spectral-workbench.js in the web public folder:
+git clone https://github.com/publiclab/spectral-workbench.js.git
+cd spectral-workbench.js
+npm install
+cd /
+
 echo "Installing rpi-serial-console script"
 wget -q https://raw.githubusercontent.com/lurch/rpi-serial-console/master/rpi-serial-console -O usr/local/bin/rpi-serial-console
 chmod +x usr/local/bin/rpi-serial-console
+
+echo "Installing RPi Cam Web Interface"
+wget -q https://github.com/silvanmelchior/RPi_Cam_Web_Interface/archive/master.zip -O /tmp/rpicam.zip
+cd /tmp/
+unzip rpicam.zip
+cd RPi_Cam_Web_Interface-master
+cp /etc/rpicam_config.txt config.txt
+bash ./install.sh q
 
 # fix eth0 interface name
 ln -s /dev/null /etc/systemd/network/99-default.link
