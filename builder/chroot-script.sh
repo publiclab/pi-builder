@@ -233,6 +233,13 @@ cd image-sequencer
 npm install
 cd /
 
+echo "Installing spectral-workbench.js"
+# install spectral-workbench.js in the web public folder:
+git clone https://github.com/publiclab/spectral-workbench.js.git
+cd spectral-workbench.js
+npm install
+cd /
+
 echo "Installing rpi-serial-console script"
 wget -q https://raw.githubusercontent.com/lurch/rpi-serial-console/master/rpi-serial-console -O usr/local/bin/rpi-serial-console
 chmod +x usr/local/bin/rpi-serial-console
