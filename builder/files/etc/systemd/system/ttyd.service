@@ -1,0 +1,8 @@
+[Unit]
+Description=ttyd Web Terminal
+
+[Service]
+ExecStart=/usr/local/bin/ttyd login
+
+[Install]
+WantedBy=multi-user.target
