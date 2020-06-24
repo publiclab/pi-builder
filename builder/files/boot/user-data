@@ -68,5 +68,8 @@ runcmd:
   # Pickup the hostname changes
   - 'systemctl restart avahi-daemon'
 
+  # Give ownership of scripts
+  - 'chown publiclab.publiclab /home/publiclab/Peggy -R'
+
 #  # Activate WiFi interface
 #  - 'ifup wlan0'

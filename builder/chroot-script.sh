@@ -116,8 +116,11 @@ echo 'deb http://archive.raspberrypi.org/debian/ stretch main' | tee /etc/apt/so
 apt-get update
 # apt-get upgrade -y
 
+# Check free space
+df -h /
+
 # install packages
-apt-get  -o Dpkg::Options::=--force-confdef \
+DEBIAN_FRONTEND=noninteractive apt-get  -o Dpkg::Options::=--force-confdef \
   install -y \
   --no-install-recommends \
   firmware-atheros \
@@ -144,8 +147,10 @@ apt-get  -o Dpkg::Options::=--force-confdef \
   pi-bluetooth \
   lsb-release \
   gettext \
-  cloud-init
-
+  cloud-init \
+  pt-ui-mods \
+  xserver-xorg \
+  git
 
 # install special Docker enabled kernel
 if [ -z "${KERNEL_URL}" ]; then
@@ -217,3 +222,6 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 echo "HYPRIOT_DEVICE=\"$HYPRIOT_DEVICE\"" >> /etc/os-release
 echo "HYPRIOT_IMAGE_VERSION=\"$HYPRIOT_IMAGE_VERSION\"" >> /etc/os-release
 cp /etc/os-release /boot/os-release
+
+# Integrate camera development work (see https://publiclab.org/notes/MaggPi/08-09-2018/raspberry-pi-manual-camera-control )
+git clone https://github.com/MargaretAN9/Peggy/ /home/publiclab/Peggy
