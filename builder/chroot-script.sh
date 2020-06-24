@@ -117,7 +117,7 @@ apt-get update
 # apt-get upgrade -y
 
 # install packages
-apt-get  -o Dpkg::Options::=--force-confdef \
+DEBIAN_FRONTEND=noninteractive apt-get  -o Dpkg::Options::=--force-confdef \
   install -y \
   --no-install-recommends \
   firmware-atheros \
@@ -144,7 +144,10 @@ apt-get  -o Dpkg::Options::=--force-confdef \
   pi-bluetooth \
   lsb-release \
   gettext \
-  cloud-init
+  cloud-init \
+  pt-ui-mods \
+  tightvncserver \
+  xvfb
 
 
 # install special Docker enabled kernel
