@@ -176,6 +176,11 @@ disable_camera_led=1
 gpu_mem=128
 " >> boot/config.txt
 
+# enable i2C
+echo "
+dtparam=i2c1=on
+" >> boot/config.txt
+
 # /etc/modules
 echo "snd_bcm2835
 " >> /etc/modules
@@ -217,3 +222,13 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 echo "HYPRIOT_DEVICE=\"$HYPRIOT_DEVICE\"" >> /etc/os-release
 echo "HYPRIOT_IMAGE_VERSION=\"$HYPRIOT_IMAGE_VERSION\"" >> /etc/os-release
 cp /etc/os-release /boot/os-release
+
+# install Witty pi energy manager software
+echo "Installing i2c-tools"
+apt-get install i2c-tools
+mkdir /home/imvec
+cd /home/imvec
+echo "Installing Witty Pi 2 software"
+wget http://www.uugear.com/repo/WittyPi2/installWittyPi.sh
+sh installWittyPi.sh
+# apt-get update
