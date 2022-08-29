@@ -7,7 +7,7 @@ You can do this from the GitHub repository directly by opening a pull request, w
 
 The Public Lab Pi Camera Kit includes an operating system which is built upon the efforts of many people.
 
-The build scripts have been forked from the Hypriot project.
+The build scripts have been forked from the Hypriot project..
 
 ## Tested on
 
