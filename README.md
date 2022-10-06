@@ -28,7 +28,7 @@ Download the [latest development build here](https://jenkins.laboratoriopublico.
 Pre-requisites for running locally: You'll need to have Docker installed.
 
 ```
-make sd-card
+make sd-image
 ```
 
 This will create an image called `hypriotos-rpi-dirty.img.zip`.
