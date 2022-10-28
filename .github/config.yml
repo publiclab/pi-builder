@@ -13,8 +13,6 @@ newIssueWelcomeComment: |
 # Comment to be posted to on PRs from first time contributors in your repository
 newPRWelcomeComment: |
  Thanks for opening this pull request!  This space is [protected by our Code of Conduct](https://publiclab.org/conduct) - and we're here to help.
- `Dangerbot` will test out your code and reply in a bit with some pointers and requests.
- Also please refer [here](https://github.com/publiclab/plots2/issues/3840) for installation help 💿
  There may be some errors, **but don't worry!** We'll work through them with you! 👍🎉😄
  It would be great if you can tell us your Twitter handle so we can thank you properly?
  
